@@ -8,7 +8,6 @@ namespace BootlegEmagService.User
 {
     public class UserFacade
     {
-
         private UserRepository UserRepository { get; set; }
 
         public UserFacade(UserRepository userRepository)
@@ -16,17 +15,14 @@ namespace BootlegEmagService.User
             UserRepository = userRepository;
         }
         
-        
-        public Models.User login(string name, string pass)
+        public Models.UserModel login(string name, string pass)
         {   
                 return UserRepository.find(name,pass);
-            }
+        }
 
-        public Models.User register(string name, string pass,string role)
+        public Models.UserModel register(string name, string pass, string role)
         {
             return UserRepository.register(name, pass, role);
         }
-
-
     }
 }

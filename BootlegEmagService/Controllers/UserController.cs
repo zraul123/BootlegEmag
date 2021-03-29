@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SQLite;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Data.SQLite;
 using BootlegEmagService.User;
+using BootlegEmagService.Models;
 
 namespace BootlegEmagService.Controllers
 {
@@ -37,7 +36,7 @@ namespace BootlegEmagService.Controllers
             string name = userLogin.Username.ToString();
             string password = userLogin.Password.ToString();
 
-            BootlegEmagService.Models.User user = userFacede.login(name, password);
+            UserModel user = userFacede.login(name, password);
             if (user != null)
             {
                 return Ok(user);
@@ -55,7 +54,7 @@ namespace BootlegEmagService.Controllers
             var name = userRegisterDTO.Username;
             var password = userRegisterDTO.Password;
             var role = userRegisterDTO.Role;
-            BootlegEmagService.Models.User user = userFacede.register(name, password, role);
+            UserModel user = userFacede.register(name, password, role);
             if (user != null)
             {
                 return Ok(user);

@@ -5,6 +5,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Threading.Tasks;
 using BootlegEmagService.Events.Model;
+using Microsoft.Extensions.Configuration;
 
 namespace BootlegEmagService.Events.Repository
 {
